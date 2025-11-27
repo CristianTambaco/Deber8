@@ -10,8 +10,8 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   bool _darkMode = false;
-  final TextEditingController _nameController = TextEditingController(text: 'Juan Pérez');
-  final TextEditingController _addressController = TextEditingController(text: 'Av. Siempre Viva 123');
+  final TextEditingController _nameController = TextEditingController(text: 'John Alban ');
+  final TextEditingController _addressController = TextEditingController(text: 'Av. Nueva Aurora 573');
 
   @override
   Widget build(BuildContext context) {

@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                   return GestureDetector(
                     onTap: () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => ProductDetailScreen(name: 'Producto $index')),
+                      MaterialPageRoute(builder: (_) => ProductDetailScreen(name: 'Orden $index')),
                     ),
                     child: const ProductCard(),
                   );
