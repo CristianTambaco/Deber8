@@ -2,8 +2,12 @@
 
 // const se maneja en forma de constante
 
+// lib/screens/home_screen.dart
 import 'package:flutter/material.dart';
-import '../widgets/proyecto_card.dart';
+import 'product_detail_screen.dart';
+import 'cart_screen.dart';
+import 'profile_screen.dart';
+import '../widgets/product_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,50 +15,84 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //color de fondo de la pantalla
-      backgroundColor: Colors.grey[100],
-
-      //barra superior
       appBar: AppBar(
-        title: const Text('App pedido de comida rápida'),
+        title: const Text('FastFood App'),
         centerTitle: true,
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
-      ), //AppBar
-
-      //contenido principal
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CartScreen())),
+            icon: const Icon(Icons.shopping_cart),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.orange),
+              child: Center(child: Text('Menú', style: TextStyle(fontSize: 24, color: Colors.white))),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Inicio'),
+              onTap: () => Navigator.pop(context),
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text('Perfil'),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfileScreen())),
+            ),
+          ],
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //Titulo de seccion
-            Text(
-              'Pedido de comida',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ), //TextStyle
-            ), //Text
-
+            const Text(
+              'Menú',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 16),
-
-            //Aqui va la tarjeta del proyecto
-            const ProyectoCard(),
-
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12,
+                children: List.generate(6, (index) {
+                  return GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailScreen(name: 'Producto $index')),
+                    ),
+                    child: const ProductCard(),
+                  );
+                }),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Ofertas'),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: const Text('Más'),
+                  ),
+                ),
+              ],
+            ),
           ],
-        ), //Column
-      ), //Padding
-    ); //Scaffold
+        ),
+      ),
+    );
   }
 }
-      
-
-
-
-
-
-
-
-
-
