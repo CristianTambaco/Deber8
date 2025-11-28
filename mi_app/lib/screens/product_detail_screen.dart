@@ -44,7 +44,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             // Radio buttons
             Row(
               children: ['Pequeño', 'Mediano', 'Grande'].map((size) {
-                return Expanded(
+                return Flexible(
                   child: RadioListTile<String>(
                     title: Text(size),
                     value: size,
