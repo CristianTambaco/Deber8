@@ -1,13 +1,19 @@
 // lib/screens/cart_screen.dart
 import 'package:flutter/material.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final cartItems = List.generate(3, (i) => 'Hamburguesa tipo ${i+1}');
+  State<CartScreen> createState() => _CartScreenState();
+}
 
+class _CartScreenState extends State<CartScreen> {
+  // Lista que sí se puede modificar
+  List<String> cartItems = List.generate(3, (i) => 'Hamburguesa tipo ${i + 1}');
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Carrito')),
       body: cartItems.isEmpty
@@ -20,8 +26,19 @@ class CartScreen extends StatelessWidget {
                   child: ListTile(
                     title: Text(cartItems[index]),
                     trailing: TextButton(
-                      onPressed: () {},
-                      child: const Text('Eliminar'),
+                      onPressed: () {
+                        setState(() {
+                          cartItems.removeAt(index); // 👈 Eliminar producto
+                        });
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Producto eliminado')),
+                        );
+                      },
+                      child: const Text(
+                        'Eliminar',
+                        style: TextStyle(color: Colors.red),
+                      ),
                     ),
                   ),
                 );
