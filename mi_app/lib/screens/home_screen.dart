@@ -30,8 +30,8 @@ class HomeScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.orange),
-              child: Center(child: Text('Menú', style: TextStyle(fontSize: 24, color: Colors.white))),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 0, 26, 255)),
+              child: Center(child: Text('Opciones', style: TextStyle(fontSize: 24, color: Colors.white))),
             ),
             ListTile(
               leading: const Icon(Icons.home),
@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Menú',
+              'Página principal',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),

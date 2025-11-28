@@ -13,6 +13,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   String? selectedSize = 'Mediano';
   bool extraCheese = false;
   bool extraBacon = false;
+  bool extraBeef = false;
+
+
   final TextEditingController _notesController = TextEditingController();
 
   @override
@@ -56,16 +59,21 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               }).toList(),
             ),
             const SizedBox(height: 16),
-            const Text('Agregados:'),
+            const Text('Agregados extra:'),            
+            CheckboxListTile(
+              title: const Text('Tocino extra'),
+              value: extraBacon,
+              onChanged: (val) => setState(() => extraBacon = val!),
+            ),
             CheckboxListTile(
               title: const Text('Queso extra'),
               value: extraCheese,
               onChanged: (val) => setState(() => extraCheese = val!),
             ),
             CheckboxListTile(
-              title: const Text('Tocino extra'),
-              value: extraBacon,
-              onChanged: (val) => setState(() => extraBacon = val!),
+              title: const Text('Carne extra'),
+              value: extraBeef,
+              onChanged: (val) => setState(() => extraBeef = val!),
             ),
             const SizedBox(height: 16),
             const Text('Notas especiales:'),
@@ -74,7 +82,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               maxLines: 2,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Ej: Sin cebolla...',
+                hintText: 'Ej: Sin lechuga...',
               ),
             ),
             const SizedBox(height: 24),

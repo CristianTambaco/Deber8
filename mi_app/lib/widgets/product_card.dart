@@ -10,7 +10,7 @@ class ProductCard extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: const Color.fromARGB(255, 250, 236, 42),
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 241, 244, 54),
+              color: const Color.fromARGB(255, 51, 224, 201),
               borderRadius: BorderRadius.circular(10),
             ),
             child: const Text('🍔🥤', style: TextStyle(fontSize: 12)),
