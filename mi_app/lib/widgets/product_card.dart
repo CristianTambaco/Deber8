@@ -25,7 +25,7 @@ class ProductCard extends StatelessWidget {
             children: const [
               Icon(Icons.fastfood, size: 48, color: Color.fromARGB(255, 255, 8, 0)),
               SizedBox(height: 8),
-              Text('          Orden de compra          ', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('    Orden de compra desde     ', style: TextStyle(fontWeight: FontWeight.bold)),
               Text('\$11.99', style: TextStyle(color: Colors.green, fontSize: 16)),
             ],
           ),
