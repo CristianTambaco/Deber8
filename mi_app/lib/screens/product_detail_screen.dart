@@ -30,7 +30,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.network(
-                'https://picsum.photos/400/200',
+                'https://www.burgerfi.com/wp-content/uploads/2025/03/juicy-burger-png.webp',
                 height: 200,
                 width: double.infinity,
                 fit: BoxFit.cover,
