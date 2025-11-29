@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                               ProductDetailScreen(name: 'Orden ${index + 1}')),
                     ),
                     child: ProductCard(
-                        price: currentPrice), // 👈 Pasamos el precio
+                        price: currentPrice), //  Pasamos el precio
                   );
                 }),
               ),

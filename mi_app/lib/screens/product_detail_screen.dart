@@ -61,7 +61,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             const SizedBox(height: 16),
             const Text('Agregados extra:'),            
             CheckboxListTile(
-              title: const Text('Tocino extra'),
+              title: const Text('Tomate extra'),
               value: extraBacon,
               onChanged: (val) => setState(() => extraBacon = val!),
             ),

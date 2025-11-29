@@ -1,6 +1,6 @@
 // lib/widgets/product_card.dart
-// lib/widgets/product_card.dart
 import 'package:flutter/material.dart';
+
 
 class ProductCard extends StatelessWidget {
   final double price;
@@ -26,10 +26,10 @@ class ProductCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.fastfood, size: 48, color: const Color.fromARGB(255, 255, 8, 0)),
+              Icon(Icons.fastfood, size: 48, color: const Color.fromARGB(255, 255, 145, 0)),
               const SizedBox(height: 8),
-              const Text('          Orden de compra          ', style: TextStyle(fontWeight: FontWeight.bold)),
-              // 👇 Aquí mostramos el precio dinámico
+              const Text('        Orden de compra de       ', style: TextStyle(fontWeight: FontWeight.bold)),
+              // muestra el precio dinámico
               Text(
                 '\$$price',
                 style: const TextStyle(color: Colors.green, fontSize: 16),
